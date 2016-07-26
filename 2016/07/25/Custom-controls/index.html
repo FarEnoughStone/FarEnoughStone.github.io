@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>足够远的石头</title>
+  <title>自定义控件 | 足够远的石头</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="足够远的石头">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="在Android的学习过程中，很早便听说过自定义控件，这个暑假终于静下心来花了一段时间来学习探究。
+要自定义控件，首先要了解View，因为所有的控件都继承自View：1public class MyView extends View&amp;#123;&amp;#125;
+当然，我们也可以继承其它控件，如ImageView，TextView等。
+
+自定义属性既然是自定义，首先要设置控件的属性attr，在res/v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义控件">
+<meta property="og:url" content="http://yoursite.com/2016/07/25/Custom-controls/index.html">
 <meta property="og:site_name" content="足够远的石头">
-<meta property="og:description">
+<meta property="og:description" content="在Android的学习过程中，很早便听说过自定义控件，这个暑假终于静下心来花了一段时间来学习探究。
+要自定义控件，首先要了解View，因为所有的控件都继承自View：1public class MyView extends View&amp;#123;&amp;#125;
+当然，我们也可以继承其它控件，如ImageView，TextView等。
+
+自定义属性既然是自定义，首先要设置控件的属性attr，在res/v">
+<meta property="og:updated_time" content="2016-07-26T06:34:45.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="足够远的石头">
-<meta name="twitter:description">
+<meta name="twitter:title" content="自定义控件">
+<meta name="twitter:description" content="在Android的学习过程中，很早便听说过自定义控件，这个暑假终于静下心来花了一段时间来学习探究。
+要自定义控件，首先要了解View，因为所有的控件都继承自View：1public class MyView extends View&amp;#123;&amp;#125;
+当然，我们也可以继承其它控件，如ImageView，TextView等。
+
+自定义属性既然是自定义，首先要设置控件的属性attr，在res/v">
   
     <link rel="alternative" href="/atom.xml" title="足够远的石头" type="application/atom+xml">
   
@@ -27,9 +40,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -40,8 +50,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -209,9 +219,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Custom-controls" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Custom-controls" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/07/25/Custom-controls/" class="article-date">
@@ -227,12 +235,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/25/Custom-controls/">自定义控件</a>
+    <h1 class="article-title" itemprop="name">
+      自定义控件
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -273,119 +292,147 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/07/25/Custom-controls/">自定义控件</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 kui 的个人博客">kui</a></p>
+        <p><span>发布时间:</span>2016年07月25日 - 22时48分</p>
+        <p><span>最后更新:</span>2016年07月26日 - 14时34分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/25/Custom-controls/" title="自定义控件">http://yoursite.com/2016/07/25/Custom-controls/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/07/25/Custom-controls/　　作者: kui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/10/fist_blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博客的搭建</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义属性"><span class="toc-number">1.</span> <span class="toc-text">自定义属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性的使用"><span class="toc-number">1.1.</span> <span class="toc-text">属性的使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数"><span class="toc-number">2.</span> <span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重写onDraw函数"><span class="toc-number">3.</span> <span class="toc-text">重写onDraw函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重写onMeasure函数"><span class="toc-number">4.</span> <span class="toc-text">重写onMeasure函数</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
 
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-  
-    <article id="post-fist_blog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/10/fist_blog/" class="article-date">
-      <time datetime="2016-06-10T14:48:44.000Z" itemprop="datePublished">2016-06-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/07/25/Custom-controls/" data-title="自定义控件" data-url="http://yoursite.com/2016/07/25/Custom-controls/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
     
-    
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/10/fist_blog/">博客的搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>作为自建博客的第一篇博文，我就说一说搭建此博客的一点心得。<br>网络上有很多第三方博客网站，注册就能使用，比较方便，但它的版面比较固定，还有广告等问题，使用体验不是很好。<br>作为一个程序猿，就打算自己搭建一个。搭建的方法和途径有很多，比如我的小伙伴就用wordpress在云服务器上搭建的，经过我的再三考虑，我决定使用hexo在github上搭。</p>
-<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>安装Node，这个是用来生成静态页面的，可以直接到<a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a>上下载，安装过程很简单，在此就不多说了。<br>安装Git，同样<a href="https://git-scm.com/download/" target="_blank" rel="external">官网下载</a>安装即可。<br>github账号，没有的话去<a href="https://github.com/" target="_blank" rel="external">官网注册</a>。</p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>新建一个文件夹，名字随便，比如我的是：D:\blog<br>进入此文件夹，右击打开“Git Bash”，当然你也可以用命令进入此文件夹：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /d/blog</span><br></pre></td></tr></table></figure>
-<p>直接使用命令安装hexo：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>然后初始化：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-<p>生成静态页面：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p>启动本地服务，进行预览：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<p>这时你打开浏览器，输入localhost:4000就可以看见了<br>现在，你的blog框架已经弄好了，当然只是在本地，下面我们把它上传到github仓库，进行托管。</p>
-<h3 id="Github配置"><a href="#Github配置" class="headerlink" title="Github配置"></a>Github配置</h3><p>登录github，新建Repository（右上角“+”号–&gt;New repository）,取名为：yourname.github.io 比如我的就叫:farenoughstone.github.io<br>如果你是小白，其它不用管，直接新建。<br>这里有两种协议，一种是SSH，上传不需要密码，不过要事先配置；另一种就是HTTPS。<br>打开文件：_config.yml<br>这里可以用编辑框vim打开，但是vim不能编辑汉字，有汉字就会出现乱码，所以最好用其它编辑器，保存文件编码方式为：UTF-8<br>将文件最下面改成：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/farenoughstone/farenoughstone.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>链接改成你自己的就行，用SSH也一样。<br>因为要将文件上传到github，所以要安装一些必要插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>上传到github：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>如果你用的是HTTPS，这儿它会有一个弹窗，要你输入github的账号和密码。<br>现在在浏览器中输入你的仓库名就能看见了，比如我的是：farenoughstone.github.io</p>
-<h3 id="hexo主题配置"><a href="#hexo主题配置" class="headerlink" title="hexo主题配置"></a>hexo主题配置</h3><p>hexo的默认主题是landscape，你可以去hexo官方下载，当然如果你是做前端开发的，自己写不是更有意思吗？<br>下载命令为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/...... themes/...</span><br></pre></td></tr></table></figure>
-<p>中间是你目标主题的链接，后面是保存到：themes/(主题名字)。<br>然后将前面提到过的 _config.yml 文件中的 theme 属性改为你下载的主题的名字。<br>依次执行命令：<br>hexo clean<br>hexo g<br>hexo d<br>主题就配置好了并上传到github了。</p>
-<h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p>我们可以使用github的二级域名，同样可以使用自己的域名。</p>
-<p>第一步当然是去买个域名了，不同的域名有不同价格，看自己咯！</p>
-<p>然后在我们的Hexo项目的sources目录下新建个CNAME文件，文件中写自己的域名，并上传。</p>
-<p>使用命令获取你博客主机的IP地址：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping yourmame.github.io</span><br></pre></td></tr></table></figure>
-<p>再在你购买域名的官网上将域名 A 解析到你获得的IP地址，同时添加 CNAME 解析，等待生效就好。</p>
-
-      
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/06/10/fist_blog/" title="下一篇: 博客的搭建">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/Custom-controls/">自定义控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/fist_blog/">博客的搭建</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 
-
-
-  
-  
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
