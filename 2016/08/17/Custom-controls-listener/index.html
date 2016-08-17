@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>博客的搭建 | 足够远的石头</title>
+  <title>自定义控件的监听 | 足够远的石头</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作为自建博客的第一篇博文，我就说一说搭建此博客的一点心得。网络上有很多第三方博客网站，注册就能使用，比较方便，但它的版面比较固定，还有广告等问题，使用体验不是很好。作为一个程序猿，就打算自己搭建一个。搭建的方法和途径有很多，比如我的小伙伴就用wordpress在云服务器上搭建的，经过我的再三考虑，我决定使用hexo在github上搭。
-环境配置安装Node，这个是用来生成静态页面的，可以直接到官网">
+  <meta name="description" content="自定义控件继承自View，所以可以使用父类的listener。若自定义控件只有一个元素，且仅仅监听其点击事件，直接使用父类的方法较为方便：
+自定义控件class1public class MyView extends View&amp;#123;...&amp;#125;
+使用控件的目标Activity123456789MyView myView = new MyView();//myView.set......">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客的搭建">
-<meta property="og:url" content="http://yoursite.com/2016/06/10/fist_blog/index.html">
+<meta property="og:title" content="自定义控件的监听">
+<meta property="og:url" content="http://yoursite.com/2016/08/17/Custom-controls-listener/index.html">
 <meta property="og:site_name" content="足够远的石头">
-<meta property="og:description" content="作为自建博客的第一篇博文，我就说一说搭建此博客的一点心得。网络上有很多第三方博客网站，注册就能使用，比较方便，但它的版面比较固定，还有广告等问题，使用体验不是很好。作为一个程序猿，就打算自己搭建一个。搭建的方法和途径有很多，比如我的小伙伴就用wordpress在云服务器上搭建的，经过我的再三考虑，我决定使用hexo在github上搭。
-环境配置安装Node，这个是用来生成静态页面的，可以直接到官网">
-<meta property="og:updated_time" content="2016-07-26T03:14:23.351Z">
+<meta property="og:description" content="自定义控件继承自View，所以可以使用父类的listener。若自定义控件只有一个元素，且仅仅监听其点击事件，直接使用父类的方法较为方便：
+自定义控件class1public class MyView extends View&amp;#123;...&amp;#125;
+使用控件的目标Activity123456789MyView myView = new MyView();//myView.set......">
+<meta property="og:updated_time" content="2016-08-17T09:37:31.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客的搭建">
-<meta name="twitter:description" content="作为自建博客的第一篇博文，我就说一说搭建此博客的一点心得。网络上有很多第三方博客网站，注册就能使用，比较方便，但它的版面比较固定，还有广告等问题，使用体验不是很好。作为一个程序猿，就打算自己搭建一个。搭建的方法和途径有很多，比如我的小伙伴就用wordpress在云服务器上搭建的，经过我的再三考虑，我决定使用hexo在github上搭。
-环境配置安装Node，这个是用来生成静态页面的，可以直接到官网">
+<meta name="twitter:title" content="自定义控件的监听">
+<meta name="twitter:description" content="自定义控件继承自View，所以可以使用父类的listener。若自定义控件只有一个元素，且仅仅监听其点击事件，直接使用父类的方法较为方便：
+自定义控件class1public class MyView extends View&amp;#123;...&amp;#125;
+使用控件的目标Activity123456789MyView myView = new MyView();//myView.set......">
   
     <link rel="alternative" href="/atom.xml" title="足够远的石头" type="application/atom+xml">
   
@@ -210,11 +213,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-fist_blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Custom-controls-listener" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/10/fist_blog/" class="article-date">
-      <time datetime="2016-06-10T14:48:44.000Z" itemprop="datePublished">2016-06-10</time>
+      <a href="/2016/08/17/Custom-controls-listener/" class="article-date">
+      <time datetime="2016-08-17T07:23:09.000Z" itemprop="datePublished">2016-08-17</time>
 </a>
     </div>
   
@@ -227,7 +230,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      博客的搭建
+      自定义控件的监听
     </h1>
   
 
@@ -238,7 +241,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -248,35 +251,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>作为自建博客的第一篇博文，我就说一说搭建此博客的一点心得。<br>网络上有很多第三方博客网站，注册就能使用，比较方便，但它的版面比较固定，还有广告等问题，使用体验不是很好。<br>作为一个程序猿，就打算自己搭建一个。搭建的方法和途径有很多，比如我的小伙伴就用wordpress在云服务器上搭建的，经过我的再三考虑，我决定使用hexo在github上搭。</p>
-<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>安装Node，这个是用来生成静态页面的，可以直接到<a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a>上下载，安装过程很简单，在此就不多说了。<br>安装Git，同样<a href="https://git-scm.com/download/" target="_blank" rel="external">官网下载</a>安装即可。<br>github账号，没有的话去<a href="https://github.com/" target="_blank" rel="external">官网注册</a>。</p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>新建一个文件夹，名字随便，比如我的是：D:\blog<br>进入此文件夹，右击打开“Git Bash”，当然你也可以用命令进入此文件夹：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /d/blog</span><br></pre></td></tr></table></figure>
-<p>直接使用命令安装hexo：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>然后初始化：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-<p>生成静态页面：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p>启动本地服务，进行预览：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<p>这时你打开浏览器，输入localhost:4000就可以看见了<br>现在，你的blog框架已经弄好了，当然只是在本地，下面我们把它上传到github仓库，进行托管。</p>
-<h3 id="Github配置"><a href="#Github配置" class="headerlink" title="Github配置"></a>Github配置</h3><p>登录github，新建Repository（右上角“+”号–&gt;New repository）,取名为：yourname.github.io 比如我的就叫:farenoughstone.github.io<br>如果你是小白，其它不用管，直接新建。<br>这里有两种协议，一种是SSH，上传不需要密码，不过要事先配置；另一种就是HTTPS。<br>打开文件：_config.yml<br>这里可以用编辑框vim打开，但是vim不能编辑汉字，有汉字就会出现乱码，所以最好用其它编辑器，保存文件编码方式为：UTF-8<br>将文件最下面改成：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/farenoughstone/farenoughstone.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>链接改成你自己的就行，用SSH也一样。<br>因为要将文件上传到github，所以要安装一些必要插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>上传到github：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>如果你用的是HTTPS，这儿它会有一个弹窗，要你输入github的账号和密码。<br>现在在浏览器中输入你的仓库名就能看见了，比如我的是：farenoughstone.github.io</p>
-<h3 id="hexo主题配置"><a href="#hexo主题配置" class="headerlink" title="hexo主题配置"></a>hexo主题配置</h3><p>hexo的默认主题是landscape，你可以去hexo官方下载，当然如果你是做前端开发的，自己写不是更有意思吗？<br>下载命令为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/...... themes/...</span><br></pre></td></tr></table></figure>
-<p>中间是你目标主题的链接，后面是保存到：themes/(主题名字)。<br>然后将前面提到过的 _config.yml 文件中的 theme 属性改为你下载的主题的名字。<br>依次执行命令：<br>hexo clean<br>hexo g<br>hexo d<br>主题就配置好了并上传到github了。</p>
-<h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p>我们可以使用github的二级域名，同样可以使用自己的域名。</p>
-<p>第一步当然是去买个域名了，不同的域名有不同价格，看自己咯！</p>
-<p>然后在我们的Hexo项目的sources目录下新建个CNAME文件，文件中写自己的域名，并上传。</p>
-<p>使用命令获取你博客主机的IP地址：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping yourmame.github.io</span><br></pre></td></tr></table></figure>
-<p>再在你购买域名的官网上将域名 A 解析到你获得的IP地址，同时添加 CNAME 解析，等待生效就好。</p>
+        <p>自定义控件继承自View，所以可以使用父类的listener。<br>若自定义控件只有一个元素，且仅仅监听其点击事件，直接使用父类的方法较为方便：</p>
+<h4 id="自定义控件class"><a href="#自定义控件class" class="headerlink" title="自定义控件class"></a>自定义控件class</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class MyView extends View&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用控件的目标Activity"><a href="#使用控件的目标Activity" class="headerlink" title="使用控件的目标Activity"></a>使用控件的目标Activity</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MyView myView = new MyView();</span><br><span class="line">//myView.set......;</span><br><span class="line">myView.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View view) &#123;</span><br><span class="line">        //code...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">relativeLayout.addView(myView);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>若自定义控件不只一个元素，我们不只是仅仅想简单的监听点击事件，还想获取其手势的滑动，点击的位置，我们便自己写监听：</p>
+<h4 id="自定义控件class-1"><a href="#自定义控件class-1" class="headerlink" title="自定义控件class"></a>自定义控件class</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class MyView extends View&#123;</span><br><span class="line">	//code......</span><br><span class="line">	private onButtonsViewListener listener;</span><br><span class="line">	//注册监听接口</span><br><span class="line">    interface onButtonsViewListener&#123;</span><br><span class="line">        void ButtonsonClick(int position);  //监听注册监听函数，参数为自定</span><br><span class="line">    &#125;</span><br><span class="line">    //设置监听函数，等同setOnClickListener（）</span><br><span class="line">    void setonButtonsViewListener(onButtonsViewListener listener)&#123;</span><br><span class="line">        this.listener = listener;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void MyView(Context context, AttributeSet attrs)&#123;</span><br><span class="line">    	super(context,attrs);</span><br><span class="line">    	//code...</span><br><span class="line">    	//设置触摸监听</span><br><span class="line">    	this.setOnTouchListener(new OnTouchListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean onTouch(View view, MotionEvent event) &#123;</span><br><span class="line">                switch(event.getAction()) &#123;</span><br><span class="line">                	case MotionEvent.ACTION_DOWN:</span><br><span class="line">                	case MotionEvent.ACTION_MOVE:</span><br><span class="line">                	case MotionEvent.ACTION_UP:</span><br><span class="line">                &#125;</span><br><span class="line">                //根据触摸事件判断手势，向监听函数传参</span><br><span class="line">                listener.ButtonsonClick(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用控件的目标Activity-1"><a href="#使用控件的目标Activity-1" class="headerlink" title="使用控件的目标Activity"></a>使用控件的目标Activity</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">MyView myView = new MyView();</span><br><span class="line">//myView.set......;</span><br><span class="line">myView.setonButtonsViewListener(new ButtonsView.onButtonsViewListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void ButtonsonClick(int position) &#123;</span><br><span class="line">                switch (position) &#123;</span><br><span class="line">                    case 0://参数为“0”时</span><br><span class="line">                    case 1://code...</span><br><span class="line">                    case 2://code...</span><br><span class="line">                    default:</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">relativeLayout.addView(myView);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>此文为个人观点，若有谬误或遗漏请包涵！</p>
 
       
     </div>
@@ -285,13 +268,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/06/10/fist_blog/">博客的搭建</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/17/Custom-controls-listener/">自定义控件的监听</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 kui 的个人博客">kui</a></p>
-        <p><span>发布时间:</span>2016年06月10日 - 22时48分</p>
-        <p><span>最后更新:</span>2016年07月26日 - 11时14分</p>
+        <p><span>发布时间:</span>2016年08月17日 - 15时23分</p>
+        <p><span>最后更新:</span>2016年08月17日 - 17时37分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/06/10/fist_blog/" title="博客的搭建">http://yoursite.com/2016/06/10/fist_blog/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/10/fist_blog/　　作者: kui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/17/Custom-controls-listener/" title="自定义控件的监听">http://yoursite.com/2016/08/17/Custom-controls-listener/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/17/Custom-controls-listener/　　作者: kui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -304,15 +287,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/07/25/Custom-controls/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          自定义控件
-        
-      </div>
-    </a>
   
+    <a href="/2016/07/25/Custom-controls/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自定义控件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -321,7 +300,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#环境配置"><span class="toc-number">1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo"><span class="toc-number">2.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github配置"><span class="toc-number">3.</span> <span class="toc-text">Github配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo主题配置"><span class="toc-number">4.</span> <span class="toc-text">hexo主题配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名配置"><span class="toc-number">5.</span> <span class="toc-text">域名配置</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义控件class"><span class="toc-number">1.</span> <span class="toc-text">自定义控件class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用控件的目标Activity"><span class="toc-number">2.</span> <span class="toc-text">使用控件的目标Activity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义控件class-1"><span class="toc-number">3.</span> <span class="toc-text">自定义控件class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用控件的目标Activity-1"><span class="toc-number">4.</span> <span class="toc-text">使用控件的目标Activity</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -369,7 +348,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/06/10/fist_blog/" data-title="博客的搭建" data-url="http://yoursite.com/2016/06/10/fist_blog/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/17/Custom-controls-listener/" data-title="自定义控件的监听" data-url="http://yoursite.com/2016/08/17/Custom-controls-listener/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -392,13 +371,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/25/Custom-controls/" title="上一篇: 自定义控件">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/07/25/Custom-controls/" title="下一篇: 自定义控件">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/17/Custom-controls-listener/">自定义控件的监听</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/Custom-controls/">自定义控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/fist_blog/">博客的搭建</a></li></ul>

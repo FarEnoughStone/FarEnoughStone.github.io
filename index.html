@@ -139,7 +139,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+                        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/自定义控件/" style="font-size: 20px;">自定义控件</a>
                     </div>
                 </section>
                 
@@ -211,6 +211,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Custom-controls-listener" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/17/Custom-controls-listener/" class="article-date">
+      <time datetime="2016-08-17T07:23:09.000Z" itemprop="datePublished">2016-08-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/17/Custom-controls-listener/">自定义控件的监听</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>自定义控件继承自View，所以可以使用父类的listener。<br>若自定义控件只有一个元素，且仅仅监听其点击事件，直接使用父类的方法较为方便：</p>
+<h4 id="自定义控件class"><a href="#自定义控件class" class="headerlink" title="自定义控件class"></a>自定义控件class</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class MyView extends View&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用控件的目标Activity"><a href="#使用控件的目标Activity" class="headerlink" title="使用控件的目标Activity"></a>使用控件的目标Activity</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MyView myView = new MyView();</span><br><span class="line">//myView.set......;</span><br><span class="line">myView.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View view) &#123;</span><br><span class="line">        //code...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">relativeLayout.addView(myView);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>若自定义控件不只一个元素，我们不只是仅仅想简单的监听点击事件，还想获取其手势的滑动，点击的位置，我们便自己写监听：</p>
+<h4 id="自定义控件class-1"><a href="#自定义控件class-1" class="headerlink" title="自定义控件class"></a>自定义控件class</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class MyView extends View&#123;</span><br><span class="line">	//code......</span><br><span class="line">	private onButtonsViewListener listener;</span><br><span class="line">	//注册监听接口</span><br><span class="line">    interface onButtonsViewListener&#123;</span><br><span class="line">        void ButtonsonClick(int position);  //监听注册监听函数，参数为自定</span><br><span class="line">    &#125;</span><br><span class="line">    //设置监听函数，等同setOnClickListener（）</span><br><span class="line">    void setonButtonsViewListener(onButtonsViewListener listener)&#123;</span><br><span class="line">        this.listener = listener;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void MyView(Context context, AttributeSet attrs)&#123;</span><br><span class="line">    	super(context,attrs);</span><br><span class="line">    	//code...</span><br><span class="line">    	//设置触摸监听</span><br><span class="line">    	this.setOnTouchListener(new OnTouchListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public boolean onTouch(View view, MotionEvent event) &#123;</span><br><span class="line">                switch(event.getAction()) &#123;</span><br><span class="line">                	case MotionEvent.ACTION_DOWN:</span><br><span class="line">                	case MotionEvent.ACTION_MOVE:</span><br><span class="line">                	case MotionEvent.ACTION_UP:</span><br><span class="line">                &#125;</span><br><span class="line">                //根据触摸事件判断手势，向监听函数传参</span><br><span class="line">                listener.ButtonsonClick(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用控件的目标Activity-1"><a href="#使用控件的目标Activity-1" class="headerlink" title="使用控件的目标Activity"></a>使用控件的目标Activity</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">MyView myView = new MyView();</span><br><span class="line">//myView.set......;</span><br><span class="line">myView.setonButtonsViewListener(new ButtonsView.onButtonsViewListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void ButtonsonClick(int position) &#123;</span><br><span class="line">                switch (position) &#123;</span><br><span class="line">                    case 0://参数为“0”时</span><br><span class="line">                    case 1://code...</span><br><span class="line">                    case 2://code...</span><br><span class="line">                    default:</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">relativeLayout.addView(myView);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>此文为个人观点，若有谬误或遗漏请包涵！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Custom-controls" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -279,7 +345,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
     </div>
 
       
