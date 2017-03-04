@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo使用图片 | 足够远的石头</title>
+  <title>Java-使用数据流对文件的复制 | 足够远的石头</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="可以在source文件夹下新建文件夹-img，将图片放在里面，如下使用方式：">
+  <meta name="description" content="数据流的输入与输出都是对应的，在此仅以输入类做为说明。
+一般常用InputStream类型如下：ByteArrayInputStream：允许将内存的缓冲区当输入流，一般与FilterInputStream对象相连；StringBufferInputStream：可将字符串转换成输入流；FileInputStream：可以将文件转换成输入流；
+一般常用FilterInputStream类型如下：D">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo使用图片">
-<meta property="og:url" content="http://yoursite.com/2017/03/04/hexo-笔记1/index.html">
+<meta property="og:title" content="Java-使用数据流对文件的复制">
+<meta property="og:url" content="http://yoursite.com/2017/03/04/Java-使用数据流对文件的复制/index.html">
 <meta property="og:site_name" content="足够远的石头">
-<meta property="og:description" content="可以在source文件夹下新建文件夹-img，将图片放在里面，如下使用方式：">
-<meta property="og:image" content="http://yoursite.com/img/笔记1.png">
-<meta property="og:updated_time" content="2017-03-04T06:31:13.560Z">
+<meta property="og:description" content="数据流的输入与输出都是对应的，在此仅以输入类做为说明。
+一般常用InputStream类型如下：ByteArrayInputStream：允许将内存的缓冲区当输入流，一般与FilterInputStream对象相连；StringBufferInputStream：可将字符串转换成输入流；FileInputStream：可以将文件转换成输入流；
+一般常用FilterInputStream类型如下：D">
+<meta property="og:updated_time" content="2017-03-04T09:25:07.490Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo使用图片">
-<meta name="twitter:description" content="可以在source文件夹下新建文件夹-img，将图片放在里面，如下使用方式：">
-<meta name="twitter:image" content="http://yoursite.com/img/笔记1.png">
+<meta name="twitter:title" content="Java-使用数据流对文件的复制">
+<meta name="twitter:description" content="数据流的输入与输出都是对应的，在此仅以输入类做为说明。
+一般常用InputStream类型如下：ByteArrayInputStream：允许将内存的缓冲区当输入流，一般与FilterInputStream对象相连；StringBufferInputStream：可将字符串转换成输入流；FileInputStream：可以将文件转换成输入流；
+一般常用FilterInputStream类型如下：D">
   
     <link rel="alternative" href="/atom.xml" title="足够远的石头" type="application/atom+xml">
   
@@ -209,11 +213,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hexo-笔记1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Java-使用数据流对文件的复制" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/04/hexo-笔记1/" class="article-date">
-      <time datetime="2017-03-04T06:19:58.000Z" itemprop="datePublished">2017-03-04</time>
+      <a href="/2017/03/04/Java-使用数据流对文件的复制/" class="article-date">
+      <time datetime="2017-03-04T08:50:02.000Z" itemprop="datePublished">2017-03-04</time>
 </a>
     </div>
   
@@ -226,7 +230,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo使用图片
+      Java-使用数据流对文件的复制
     </h1>
   
 
@@ -237,7 +241,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -247,7 +251,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>可以在source文件夹下新建文件夹-img，将图片放在里面，如下使用方式：<br><img src="img/笔记1.png" alt="picture"></p>
+        <p>数据流的输入与输出都是对应的，在此仅以输入类做为说明。</p>
+<p>一般常用InputStream类型如下：<br>ByteArrayInputStream：允许将内存的缓冲区当输入流，一般与FilterInputStream对象相连；<br>StringBufferInputStream：可将字符串转换成输入流；<br>FileInputStream：可以将文件转换成输入流；</p>
+<p>一般常用FilterInputStream类型如下：<br>DataInputStream：以基本数据类型进行读；<br>BufferedInputStream：使用缓冲区进行读；</p>
+<p>上方是以字节方式进行，下方以字符方式进行。</p>
+<p>一般常用的Reader类型：<br>FileReader，StringReader，CharArrayReader；</p>
+<p>一般常用的FilterReader类型：<br>BufferedReader，PrintWrite；</p>
+<p>下方为一个复制文件的Demo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 对图片数据流的缓冲测试</span><br><span class="line"> * 2017-3-4</span><br><span class="line"> */</span><br><span class="line">File f1=new File(&quot;D:img/picture1.jpg&quot;);</span><br><span class="line">File f2=new File(&quot;D:img/picture2.jpg&quot;);</span><br><span class="line">f2.createNewFile();</span><br><span class="line">//System.out.println(f1.exists());</span><br><span class="line">//System.out.println(f2.exists());</span><br><span class="line"></span><br><span class="line">try&#123;</span><br><span class="line">	DataInputStream in=new DataInputStream(new BufferedInputStream(new FileInputStream(f1.getAbsolutePath())));</span><br><span class="line">	DataOutputStream out=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(f2.getAbsolutePath())));</span><br><span class="line">	</span><br><span class="line">	byte[] buffer=new byte[1024];</span><br><span class="line">	long count;</span><br><span class="line">//			while((count=in.read(buffer))!=0)&#123;//对字节的读取不能用返回值进行判断</span><br><span class="line">//				out.write(buffer);</span><br><span class="line">//			&#125;</span><br><span class="line">	System.out.println(count=Calendar.getInstance().getTimeInMillis());</span><br><span class="line">	while(in.available()!=0)&#123;//应用此方法判断</span><br><span class="line">		in.read(buffer);</span><br><span class="line">		out.write(buffer);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(Calendar.getInstance().getTimeInMillis());</span><br><span class="line">	System.out.println(Calendar.getInstance().getTimeInMillis()-count+&quot;ms&quot;);//判断效率，单位毫秒</span><br><span class="line">	in.close();</span><br><span class="line">	out.close();</span><br><span class="line">&#125;catch (IOException e) &#123;</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -256,13 +266,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/04/hexo-笔记1/">hexo使用图片</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/04/Java-使用数据流对文件的复制/">Java-使用数据流对文件的复制</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 kui 的个人博客">kui</a></p>
-        <p><span>发布时间:</span>2017年03月04日 - 14时19分</p>
-        <p><span>最后更新:</span>2017年03月04日 - 14时31分</p>
+        <p><span>发布时间:</span>2017年03月04日 - 16时50分</p>
+        <p><span>最后更新:</span>2017年03月04日 - 17时25分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/04/hexo-笔记1/" title="hexo使用图片">http://yoursite.com/2017/03/04/hexo-笔记1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/04/hexo-笔记1/　　作者: kui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/04/Java-使用数据流对文件的复制/" title="Java-使用数据流对文件的复制">http://yoursite.com/2017/03/04/Java-使用数据流对文件的复制/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/04/Java-使用数据流对文件的复制/　　作者: kui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -275,18 +285,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/03/04/Java-使用数据流对文件的复制/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Java-使用数据流对文件的复制
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/02/Android-bluetooth/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android蓝牙的使用</div>
+    <a href="/2017/03/04/hexo-笔记1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo使用图片</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -345,7 +346,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2017/03/04/hexo-笔记1/" data-title="hexo使用图片" data-url="http://yoursite.com/2017/03/04/hexo-笔记1/"></div>
+    <div class="ds-thread" data-thread-key="2017/03/04/Java-使用数据流对文件的复制/" data-title="Java-使用数据流对文件的复制" data-url="http://yoursite.com/2017/03/04/Java-使用数据流对文件的复制/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -368,13 +369,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/04/Java-使用数据流对文件的复制/" title="上一篇: Java-使用数据流对文件的复制">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/03/02/Android-bluetooth/" title="下一篇: Android蓝牙的使用">
+            <a href="/2017/03/04/hexo-笔记1/" title="下一篇: hexo使用图片">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -139,7 +139,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/自定义控件/" style="font-size: 15px;">自定义控件</a> <a href="/tags/蓝牙/" style="font-size: 10px;">蓝牙</a>
+                        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/笔记/" style="font-size: 15px;">笔记</a> <a href="/tags/自定义控件/" style="font-size: 15px;">自定义控件</a> <a href="/tags/蓝牙/" style="font-size: 10px;">蓝牙</a>
                     </div>
                 </section>
                 
@@ -210,6 +210,70 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Java-使用数据流对文件的复制" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/04/Java-使用数据流对文件的复制/" class="article-date">
+      <time datetime="2017-03-04T08:50:02.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/Java-使用数据流对文件的复制/">Java-使用数据流对文件的复制</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>数据流的输入与输出都是对应的，在此仅以输入类做为说明。</p>
+<p>一般常用InputStream类型如下：<br>ByteArrayInputStream：允许将内存的缓冲区当输入流，一般与FilterInputStream对象相连；<br>StringBufferInputStream：可将字符串转换成输入流；<br>FileInputStream：可以将文件转换成输入流；</p>
+<p>一般常用FilterInputStream类型如下：<br>DataInputStream：以基本数据类型进行读；<br>BufferedInputStream：使用缓冲区进行读；</p>
+<p>上方是以字节方式进行，下方以字符方式进行。</p>
+<p>一般常用的Reader类型：<br>FileReader，StringReader，CharArrayReader；</p>
+<p>一般常用的FilterReader类型：<br>BufferedReader，PrintWrite；</p>
+<p>下方为一个复制文件的Demo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 对图片数据流的缓冲测试</span><br><span class="line"> * 2017-3-4</span><br><span class="line"> */</span><br><span class="line">File f1=new File(&quot;D:img/picture1.jpg&quot;);</span><br><span class="line">File f2=new File(&quot;D:img/picture2.jpg&quot;);</span><br><span class="line">f2.createNewFile();</span><br><span class="line">//System.out.println(f1.exists());</span><br><span class="line">//System.out.println(f2.exists());</span><br><span class="line"></span><br><span class="line">try&#123;</span><br><span class="line">	DataInputStream in=new DataInputStream(new BufferedInputStream(new FileInputStream(f1.getAbsolutePath())));</span><br><span class="line">	DataOutputStream out=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(f2.getAbsolutePath())));</span><br><span class="line">	</span><br><span class="line">	byte[] buffer=new byte[1024];</span><br><span class="line">	long count;</span><br><span class="line">//			while((count=in.read(buffer))!=0)&#123;//对字节的读取不能用返回值进行判断</span><br><span class="line">//				out.write(buffer);</span><br><span class="line">//			&#125;</span><br><span class="line">	System.out.println(count=Calendar.getInstance().getTimeInMillis());</span><br><span class="line">	while(in.available()!=0)&#123;//应用此方法判断</span><br><span class="line">		in.read(buffer);</span><br><span class="line">		out.write(buffer);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(Calendar.getInstance().getTimeInMillis());</span><br><span class="line">	System.out.println(Calendar.getInstance().getTimeInMillis()-count+&quot;ms&quot;);//判断效率，单位毫秒</span><br><span class="line">	in.close();</span><br><span class="line">	out.close();</span><br><span class="line">&#125;catch (IOException e) &#123;</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hexo-笔记1" class="article article-type-post" itemscope itemprop="blogPost">
   
